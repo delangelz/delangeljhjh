@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+    <header>
+        <h1>Panel de Administración</h1>
+        <nav>
+            <button id="nav-products">Gestionar Productos</button>
+            <button id="nav-users">Gestionar Usuarios</button>
+            <button id="nav-orders">Ver Pedidos</button>
+            <button id="nav-sales-summary">Resumen de Ventas</button>
+            <button id="logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+    <main class="container">
+        <section id="products-section" class="admin-section">
+            <h2>Gestionar Productos</h2>
+            <div id="add-product-form">
+                <h3>Agregar Nuevo Producto</h3>
+                <input type="text" id="product-name" placeholder="Nombre del Producto" required>
+                <textarea id="product-description" placeholder="Descripción"></textarea>
+                <input type="number" id="product-price" placeholder="Precio" step="0.01" required>
+                <input type="text" id="product-image" placeholder="URL de la Imagen">
+                <button id="add-product-btn">Agregar Producto</button>
+                <p id="product-message" class="message"></p>
+            </div>
+            <h3>Listado de Productos</h3>
+            <div id="product-list-admin">
+                <!-- Los productos se cargarán aquí -->
+            </div>
+        </section>
+
+        <section id="users-section" class="admin-section" style="display:none;">
+            <h3>Crear Nuevo Usuario (Comprador)</h3>
+            <input type="text" id="new-username" placeholder="Nombre de Usuario" required>
+            <input type="password" id="new-password" placeholder="Contraseña" required>
+            <button id="add-user-btn">Crear Usuario</button>
+            <input type="email" id="new-user-email" placeholder="Email del Usuario">
+            <input type="tel" id="new-user-phone" placeholder="Teléfono del Usuario">
+            <input type="text" id="new-user-photo" placeholder="URL de Foto de Perfil">
+            <button id="add-user-btn" type="button">Crear Usuario</button>
+            <p id="user-message" class="message"></p>
+            </div>
+            <h3>Listado de Usuarios</h3>
+            <div id="user-list-admin"></div>
+        </section>
+
+        <section id="orders-section" class="admin-section" style="display:none;">
+            <h2>Ver Pedidos</h2>
+            <div id="order-list-admin"></div>
+        </section>
+
+        <section id="sales-summary-section" class="admin-section" style="display:none;">
+            <h2>Resumen de Ventas Mensuales</h2>
+            <div id="sales-summary-content"></div>
+        </section>
+    </main>
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda para Compradores</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/buyer.css">
+</head>
+
+<body>
+    <header>
+        <h1>Catálogo de Productos</h1>
+        <nav>
+            <button id="nav-catalog">Catálogo</button>
+            <button id="nav-cart">Carrito (<span id="cart-count">0</span>)</button>
+            <button id="nav-orders-buyer">Mis Pedidos</button>
+            <button id="logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+    <main class="container">
+        <section id="catalog-section" class="buyer-section">
+            <h2>Productos Disponibles</h2>
+            <div id="product-catalog">
+                <!-- Los productos se cargarán aquí -->
+            </div>
+        </section>
+
+        <section id="cart-section" class="buyer-section" style="display:none;">
+            <h2>Mi Carrito</h2>
+            <div id="cart-items">
+                <!-- Items del carrito se cargarán aquí -->
+            </div>
+            <div id="cart-summary" style="display:none;">
+                <p>Total: $<span id="cart-total">0.00</span></p>
+                <button id="checkout-btn">Realizar Compra</button>
+            </div>
+            <p id="cart-message" class="message"></p>
+        </section>
+
+        <section id="orders-buyer-section" class="buyer-section" style="display:none;">
+            <h2>Mis Pedidos</h2>
+            <div id="buyer-order-list"></div>
+        </section>
+    </main>
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/buyer.js"></script>
+</body>
+
+</html>
